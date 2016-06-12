@@ -1,0 +1,19 @@
+{
+  "tests": [
+    {
+      "suite": "My suite",
+      "section": "My section",
+      "testcase": "Check required fields on login page",
+      "results": [
+        {
+          "status": "passed",
+          "comment": "User is logged successfully"
+        },
+        {
+          "status": "failed",
+          "comment": "There is no email field"
+        }
+      ]
+    }
+  ]
+}
