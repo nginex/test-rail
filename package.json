@@ -1,0 +1,44 @@
+{
+  "name": "test-rail",
+  "version": "1.0.0",
+  "description": "TestRail Integration using API of the service.",
+  "scripts": {
+    "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
+    "start": "npm run build && node ./distribution/index.js",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nginex/test-rail.git"
+  },
+  "keywords": [
+    "testrail",
+    "autotest",
+    "integration",
+    "test"
+  ],
+  "contributors": [
+    {
+      "name": "Oleksandr Kuzava",
+      "email": "oleks.kuzava@gmail.com"
+    },
+    {
+      "name": "Roman Danylyuk",
+      "email": "roman.d89@gmail.com"
+    }
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nginex/test-rail/issues"
+  },
+  "homepage": "https://github.com/nginex/test-rail#readme",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "node-testrail": "0.0.12"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "test-rail": "./distribution/index.js"
+  }
+}
