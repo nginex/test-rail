@@ -8,4 +8,3 @@ const email = config.account.email;
 const password = config.account.password;
 
 const TR = new TestRail(url, email, password);
-
