@@ -1,6 +1,6 @@
 {
   "name": "test-rail",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "TestRail Integration using API of the service.",
   "scripts": {
     "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
@@ -32,10 +32,12 @@
     "url": "https://github.com/nginex/test-rail/issues"
   },
   "homepage": "https://github.com/nginex/test-rail#readme",
+  "dependencies": {
+    "node-testrail": "0.0.12"
+  },
   "devDependencies": {
     "babel-cli": "^6.10.1",
     "babel-preset-es2015": "^6.9.0",
-    "node-testrail": "0.0.12"
   },
   "preferGlobal": true,
   "bin": {
