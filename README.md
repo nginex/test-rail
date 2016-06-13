@@ -1,4 +1,6 @@
-# TestRail Integration
+# TestRail Integration (BETA)
+## Note: this functionality will be available soon.
+
 You made great choices if you want: 
 1. You have file with test results and you want to publish your results in TestRail service.
 2. See an example of module with ES2015 Standard.
