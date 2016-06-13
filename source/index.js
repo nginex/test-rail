@@ -12,13 +12,15 @@ import TestRail from 'node-testrail';
 import fs from 'fs';
 import path from 'path';
 
-fs.access('../test-rail.config.json', fs.R_OK, (err) => {
-  if (err) {
-    throw err;
-  }
-});
+let configPath = path.resolve('', 'test-rail.config.json');
+fs.chmodSync(configPath, '755');
+fs.accessSync(configPath, fs.R_OK);
 
 import config from '../test-rail.config.json';
+if (typeof config.account === 'undefined') {
+  require('./message.js');
+  process.exit(0);
+}
 
 let resultsPath = args[0];
 
