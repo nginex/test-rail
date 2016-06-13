@@ -10,15 +10,30 @@ if (!args.length) {
 // Import configs and modules.
 import TestRail from 'node-testrail';
 import fs from 'fs';
-import config from '../config.json';
+import path from 'path';
 
-fs.access(args[0], fs.R_OK, (err) => {
+fs.access('../test-rail.config.json', fs.R_OK, (err) => {
   if (err) {
     throw err;
   }
 });
 
-const results = require(args[0]);
+import config from '../test-rail.config.json';
+
+let resultsPath = args[0];
+
+// Check if path to file with results is absolute.
+if (!path.isAbsolute(resultsPath)) {
+  resultsPath = path.resolve('', resultsPath);
+}
+
+fs.access(resultsPath, fs.R_OK, (err) => {
+  if (err) {
+    throw err;
+  }
+});
+
+const results = require(resultsPath);
 
 const url = config.account.url;
 const email = config.account.email;

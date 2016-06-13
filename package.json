@@ -1,11 +1,13 @@
 {
   "name": "test-rail",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "TestRail Integration using API of the service.",
   "scripts": {
     "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
     "start": "npm run build && node ./distribution/index.js",
-    "prepublish": "npm run build"
+    "cli": "npm run build && node ./distribution/cli.js",
+    "prepublish": "npm run build",
+    "preinstall": "npm run cli"
   },
   "repository": {
     "type": "git",
@@ -33,7 +35,9 @@
   },
   "homepage": "https://github.com/nginex/test-rail#readme",
   "dependencies": {
+    "commander": "^2.9.0",
     "fs": "0.0.2",
+    "inquirer": "^1.0.3",
     "node-testrail": "0.0.12",
     "optimist": "^0.6.1"
   },

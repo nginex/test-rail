@@ -1,7 +1,0 @@
-{
-  "account": {
-    "url": "https://<url>.testrail.net",
-    "email": "Your TestRail Email",
-    "password": "Your TestRail Password"
-  }
-}
