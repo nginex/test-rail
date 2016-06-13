@@ -16,7 +16,7 @@ let configPath = path.resolve('', 'test-rail.config.json');
 fs.chmodSync(configPath, '755');
 fs.accessSync(configPath, fs.R_OK);
 
-import config from '../test-rail.config.json';
+const config = require(configPath);
 if (typeof config.account === 'undefined') {
   require('./message.js');
   process.exit(0);

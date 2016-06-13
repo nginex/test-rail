@@ -1,12 +1,12 @@
 {
   "name": "test-rail",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "TestRail Integration using API of the service.",
   "scripts": {
     "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
     "start": "npm run build && node ./distribution/index.js",
     "prepublish": "npm run build",
-    "postinstall": "test-rail welcome"
+    "postinstall": "test-rail-welcome"
   },
   "repository": {
     "type": "git",
@@ -48,7 +48,7 @@
   "preferGlobal": true,
   "bin": {
     "test-rail": "./distribution/index.js",
-    "test-rail config": "./distribution/cli.js",
-    "test-rail welcome": "./distribution/message.js"
+    "test-rail-config": "./distribution/cli.js",
+    "test-rail-welcome": "./distribution/message.js"
   }
 }
