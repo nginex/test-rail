@@ -23,6 +23,10 @@ inquirer.prompt([{
   type: 'password',
   name: 'password',
   message: 'Enter your TestRail account password'
+}, {
+  type: 'input',
+  name: 'project',
+  message: 'Enter your TestRail project name'
 }]).then((answers) => {
   generateConfiguration(answers);
   process.exit(0);

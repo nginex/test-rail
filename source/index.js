@@ -40,6 +40,7 @@ const results = require(resultsPath);
 const url = config.account.url;
 const email = config.account.email;
 const password = config.account.password;
+const project = config.account.project;
 
 const TR = new TestRail(url, email, password);
 
@@ -49,3 +50,28 @@ TR.getUserByEmail(email, (user) => {
     throw new Error('There is no account in TestRail. See help to set correct user data.');
   }
 });
+
+if (typeof results.tests === 'undefined' || !results.tests.length) {
+  throw new Error('There are no test cases.');
+}
+
+class TestRailHelper {
+  constructor(name) {
+    this.projectName = name;
+  }
+
+  get projectId() {
+    TR.getProjects((d) => {
+      const projects = JSON.parse(d);
+      for (let i = 0; i < projects.length; i++) {
+        if (projects[i].name == this.projectName) {
+          return projects[i].id;
+        }
+      }
+      throw new Error('There are no project with entered name.');
+    });
+  }
+}
+
+let testRail = new TestRailHelper(project);
+const amountTestCases = results.tests.length;

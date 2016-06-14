@@ -1,6 +1,6 @@
 {
   "name": "test-rail",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "TestRail Integration using API of the service.",
   "scripts": {
     "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
