@@ -97,7 +97,7 @@ class TestRailHelper {
     TR.getSuites(this.projectId, (d) => {
       const suites = JSON.parse(d);
       for (let i = 0; i < suites.length; i++) {
-        if (suites[i].name == suiteName) {
+        if (suites[i].name == this.suiteName) {
           this.suiteId = suites[i].id;
           break;
         }

@@ -1,12 +1,12 @@
 {
   "name": "test-rail",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "TestRail Integration using API of the service.",
   "scripts": {
     "build": "babel source --presets babel-preset-es2015 --out-dir distribution",
     "start": "npm run build && node ./distribution/index.js",
     "prepublish": "npm run build",
-    "postinstall": "test-rail-welcome"
+    "postinstall": "test-rail-config"
   },
   "repository": {
     "type": "git",
